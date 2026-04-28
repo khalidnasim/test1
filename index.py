@@ -1,8 +1,13 @@
 from flask import Flask
+
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Python is running on Vercel!"
+    return "<h1>Success!</h1><p>Your Python app is running on Vercel.</p>"
 
-# Vercel needs the 'app' variable to be available
+@app.route('/about')
+def about():
+    return "This is the about page."
+
+# Vercel will look for the 'app' variable
